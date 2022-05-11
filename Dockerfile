@@ -19,5 +19,5 @@ COPY /src /src
 # puerto a exponer para conectarnos
 EXPOSE 4000
 
-CMD ["npm","run","dev"]
+# CMD ["npm","run","dev"]
 # docker run -it --init -p 5000:4000 --rm  --name app_mejorada  app/0.1
