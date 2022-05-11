@@ -1,0 +1,125 @@
+// curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
+// source ~/.bashrc
+// nvm install v16
+
+
+// sudo apt install nginx
+
+// esto si no tiene ufw
+// sudo apt-get install ufw
+
+// sudo ufw app list
+// firewall
+
+// sudo ufw satus
+// habilitar Nginx HTTP
+// habilitar OpenSSH
+//  sudo ufw allow 'OpenSSH'
+
+
+// systemctl status nginx
+
+// sudo service nginx restart
+
+// sudo service nginx stop
+// sudo service nginx start
+
+// npm i pm2 -g
+//  si se cae el server se reinicia
+// pm2 start index.js
+
+// pm2 stop 0
+// pm2 restart 0=> numero de archivo en el id 
+
+// al cambiar el firewall pasa que no podemos ingresar asi que ingresamos este comando
+
+
+// sudo ufw status
+// gcloud compute firewall-rules create ssh-pc --allow tcp:22
+
+
+// pm2 kill para detener el servicio
+
+
+// tuve que instalar nano tambien :|
+// sudo apt-get install nano
+
+// Hasta el momento tenemos una E2 con node, nginx y pm2 instalados
+
+
+// COMANDOS VISTOS 
+// sudo ufw status
+// sudo apt install nginx
+// sudo ufw app list
+// Tzuzul Code12:19
+// sudo ufw enable
+// sudo ufw allow 'Nginx HTTP'
+// sudo ufw allow 'OpenSSH'
+// systemctl status nginx
+// service nginx status
+// sudo ufw allow 'Nginx HTTPS'
+// Tzuzul Code12:20
+//  service nginx restart
+// sudo service nginx restart
+// sudo service nginx stop
+// sudo service nginx start
+// npm install pm2 -g
+// pm2 start index.js
+// Tzuzul Code12:21
+// pm2 restart 0
+// pm2 status
+
+
+// configuracion proxy
+// proxy_set_header X-Real-IP $remote_addr;
+//     proxy_set_header X-Forwarder-For $proxy_add_x_forwarded_for;
+//     proxy_set_header Host $http_host;
+//     proxy_set_header X-NginX-Proxy true;
+
+//     proxy_pass http://subdominio.tu_dominio.com;
+//     proxy_redirect off;
+
+
+// upstream tzuzul.com{
+//     server 127.0.0.1:4000;
+// }
+
+// server{
+//     listen 0.0.0.0:80;
+//     server_name tzuzul.com;
+//     location / {
+//             proxy_set_header X-Real-IP $remote_addr;
+//             proxy_set_header X-Forwarder-For $proxy_add_x_forwarded_for;
+//             proxy_set_header Host $http_host;
+//             proxy_set_header X-NginX-Proxy true;
+//             proxy_pass http://tzuzul.com/;
+//             proxy_redirect off;
+//     }
+// }
+
+
+// proxy_pass "http://127.0.0.1:8080";
+// proxy_http_version 1.1;
+// proxy_set_header Upgrade $http_upgrade;
+// proxy_set_header Connection 'upgrade';
+// proxy_cache_bypass $http_upgrade;
+
+
+
+sudo apt-get install python3-pip
+sudo python3 -m pip install certbot certbot-nginx
+sudo certbot --nginx
+
+
+dokcer
+
+
+// . donde estoy
+docker build  . -t nombre
+
+docker run -it --init -p 5000:4000 --rm  --name app_mejorada  app/0.1
+
+si queremos ejecucion en segundo plano
+docker run -it --init -d -p 5000:4000 --rm  --name app_mejorada  app/0.1
+
+docker exec -it app_mejorada bash
